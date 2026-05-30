@@ -2,7 +2,7 @@ import "./style.css";
 
 import { Link } from "react-router-dom";
 
-function Card(props) {
+function CardDev(props) {
     
     function verificarLista() {
         if (typeof props.listaTeachs === "string") {
@@ -28,8 +28,14 @@ function Card(props) {
             </div>
 
             <div className="techs">
-               {verificarListaTechs()}
+               {verificarListaTechs().map((tech, indice) => (
+               <span key={indice}>
+                 {tech}
+               </span>
+               )) }
             </div>
         </div>
-    )
+    );
 }
+
+export default Carddev;
